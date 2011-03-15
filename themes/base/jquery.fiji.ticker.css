@@ -1,0 +1,10 @@
+/*
+ * jQuery Fiji Ticker @VERSION
+ *
+ * Copyright (c) 2011 Kai Schlamp
+ * Dual licensed under the MIT or GPL Version 2 licenses.
+ *
+ * https://github.com/medihack/jquery-fiji
+ */
+.ui-ticker { width: 100%; margin: 0px; padding: 0px; overflow: hidden }
+.ui-ticker .ui-ticker-content { display: block; font-size: 1em; padding: .5em .5em .5em .7em; margin-bottom: 1px; }

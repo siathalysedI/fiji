@@ -1,0 +1,61 @@
+h1 {
+  position:relative;
+  left:150px;
+  top:0px;
+  width:450px;
+  margin:0px;
+  padding:15px 10px 20px 15px;
+  font-family:arial, sans-serif;
+  font-size: 20px;
+  line-height:20px;
+  font-weight: 800;
+  color: #ffffff;
+  background:#aaaaaa;
+}
+
+h2 {
+  position:relative;
+  margin:0px;
+  font-family:arial, sans-serif;
+  font-size: 16px;
+  line-height:20px;
+  font-weight: 800;
+  color: rgb(195,0,25);
+}
+
+ul {
+  padding: 0px;
+  margin: 0px;
+}
+
+#ticker li, #ticker li:hover {
+  position:relative;
+  left:150px;
+  background: none;
+  border:none;
+  width:450px;
+  border-bottom: 1px solid #999999;
+  color:#333333;
+  padding: 10px;
+}
+
+img {
+  margin:5px 10px 10px 0px;
+  float:left;
+}
+
+p {
+  position:relative;
+  margin:0px;
+  font-family:arial, sans-serif;
+  font-size: 13px;
+  line-height:18px;
+  font-weight: 400;
+
+}
+
+.ago {
+  color:#666666;
+  font-size: 10px;
+}
+
