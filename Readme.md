@@ -5,6 +5,8 @@
 The jQuery Fiji project is a jQuery UI widget library that complements the jQuery UI project with widgets currently not available there.
 This is not an official jQuery UI project, nor are we associated with the jQuery UI team in any way. All widgets were created for our own project needs in mind.
 
+[Ticker Demo](http://medihack.github.com/jquery-fiji/demos/ticker/ticker.html)
+
 ## Widgets
 
 ### jQuery Fiji Ticker
