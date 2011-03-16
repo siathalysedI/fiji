@@ -1,0 +1,17 @@
+/*
+ * jQuery Fiji Paginate @VERSION
+ *
+ * Copyright (c) 2011 Kai Schlamp, Torsten Kühr
+ * Dual licensed under the MIT or GPL Version 2 licenses.
+ *
+ * https://github.com/medihack/jquery-fiji
+ */
+.fiji-paginate {}
+.fiji-paginate a {
+  text-decoration: none;
+}
+.fiji-paginate .fiji-paginate-page {}
+.fiji-paginate .fiji-paginate-current {}
+.fiji-paginate .fiji-paginate-gap {}
+.fiji-paginate .fiji-paginate-previous, .fiji-paginate .fiji-paginate-next {}
+
