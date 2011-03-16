@@ -13,6 +13,8 @@ A Twitter (when not logged in on the start page) like Ticker.
 Fully compatible with the jQuery UI Theming framework.
 Well configurable and fully Unit tested.
 
+[Ticker Demo](http://medihack.github.com/jquery-fiji/demos/ticker/ticker.html)
+
 Uses the below initial HTML structure:
 
     <div id="#ticker">
