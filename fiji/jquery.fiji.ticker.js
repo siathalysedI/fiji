@@ -56,6 +56,8 @@ $.widget("fiji.ticker", {
 					self.timeoutId = window.setTimeout(function() {self._scroll();}, self.speed);
 				}
 			});
+
+        self.element.find("ul").addClass("ui-helper-reset");
 			
 		self.element.find("li").addClass(itemClasses);
 		self._addItemBindings(self.element.find("li"));
@@ -97,6 +99,8 @@ $.widget("fiji.ticker", {
 		self.element.find("li").unbind(".ticker");
 		self.element.removeClass("fiji-ticker ui-widget ui-corner-all");
 		self.element.find("li").removeClass(itemClasses + " ui-state-hover ui-state-focus");
+
+        self.element.find("ul").removeClass("ui-helper-reset");
 
 		if (self.originalStyle === null) {
 			self.element.removeAttr("style");
