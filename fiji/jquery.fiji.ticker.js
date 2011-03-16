@@ -1,7 +1,7 @@
 /*
  * jQuery Fiji Ticker @VERSION
  *
- * Copyright (c) 2011 Kai Schlamp
+ * Copyright (c) 2011 Kai Schlamp, Torsten Kühr
  * Dual licensed under the MIT or GPL Version 2 licenses.
  *
  * https://github.com/medihack/jquery-fiji
@@ -12,7 +12,7 @@
  */
 (function($, undefined) {
 	
-var itemClasses = "ui-ticker-content ui-widget-content ui-helper-reset ui-state-default";
+var itemClasses = "fiji-ticker-content ui-widget-content ui-helper-reset ui-state-default";
 
 $.widget("fiji.ticker", {
 	options: {
@@ -35,7 +35,7 @@ $.widget("fiji.ticker", {
 		self.speed = options.mouseOffTimeout;
 		
 		self.element
-			.addClass("ui-ticker ui-widget ui-corner-all")
+			.addClass("fiji-ticker ui-widget ui-corner-all")
 			.bind("mouseenter.ticker", function() {
 				if (options.disabled) {
 					return;
@@ -95,7 +95,7 @@ $.widget("fiji.ticker", {
 		
 		self.element.unbind(".ticker");
 		self.element.find("li").unbind(".ticker");
-		self.element.removeClass("ui-ticker ui-widget ui-corner-all");
+		self.element.removeClass("fiji-ticker ui-widget ui-corner-all");
 		self.element.find("li").removeClass(itemClasses + " ui-state-hover ui-state-focus");
 
 		if (self.originalStyle === null) {
@@ -228,7 +228,7 @@ $.widget("fiji.ticker", {
 	}
 });
 
-$.extend($.ui.ticker, {
+$.extend($.fiji.ticker, {
 	version: "@VERSION"
 });
 
