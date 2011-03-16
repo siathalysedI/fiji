@@ -6,24 +6,24 @@
 module("ticker: methods");
 
 test("init", function() {
-	$("<ul></ul>").appendTo('body').ticker().remove();
+	$("<div></div>").appendTo('body').ticker().remove();
 	ok(true, '.ticker() called on element');
 
 	$([]).ticker().remove();
 	ok(true, '.ticker() called on empty collection');
 
-	$('<ul></ul>').ticker().remove();
+	$('<div></div>').ticker().remove();
 	ok(true, '.ticker() called on disconnected DOMElement - never connected');
 
-	$('<ul></ul>').appendTo('body').remove().ticker().remove();
+	$('<div></div>').appendTo('body').remove().ticker().remove();
 	ok(true, '.ticker() called on disconnected DOMElement - removed');
 
-	var el = $('<ul></ul>').ticker();
+	var el = $('<div></div>').ticker();
 	var foo = el.ticker("option", "foo");
 	el.remove();
 	ok(true, 'arbitrary option getter after init');
 
-	$('<ul></ul>').ticker().ticker("option", "foo", "bar").remove();
+	$('<div></div>').ticker().ticker("option", "foo", "bar").remove();
 	ok(true, 'arbitrary option setter after init');
 });
 
