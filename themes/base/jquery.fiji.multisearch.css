@@ -1,0 +1,58 @@
+/*
+ * jQuery Fiji Paginate @VERSION
+ *
+ * Copyright (c) 2011 Torsten Kühr, Kai Schlamp
+ * Dual licensed under the MIT or GPL Version 2 licenses.
+ *
+ * https://github.com/medihack/jquery-fiji
+ */
+
+/*
+ * searchfield
+*/
+
+.fiji-multisearch {
+	position: relative;
+	width: 250px;
+}
+.fiji-multisearch li {
+	line-height: 1;
+	margin-bottom: 5px;
+}
+
+.fiji-multisearch-controls {
+	vertical-align: top;
+    display: inline-block;
+    position: relative;
+    width: 64px;
+	height: 21px;
+	line-height: 21px;
+}
+.fiji-multisearch-gripper {
+	position: absolute;
+	width: 10px;
+	margin-left: 1px;
+	height: 100%;
+	cursor: pointer;
+    background: #000;
+	display: none;
+}
+
+.fiji-multisearch-field-add {
+	position: absolute;
+	display: block;
+	left: 15px;
+	width: 15px;
+    height: 100%;
+	cursor: pointer;
+}
+
+.fiji-multisearch-field-remove {
+	position: absolute;
+	display: block;
+	left: 33px;
+	width: 15px;
+    height: 100%;
+	cursor: pointer;
+}
+
