@@ -12,12 +12,14 @@
  */
 (function($, undefined) {
 
-	var CONTAINER_CLASSES = "fiji-paginate ui-widget"
-	var PAGE_CLASSES = "fiji-paginate-page ui-widget-content ui-state-default";
-	var CURRENT_PAGE_CLASSES = "fiji-paginate-current ui-widget-content ui-state-highlight";
+	var CONTAINER_CLASSES = "fiji-paginate"
+	var PAGE_CLASSES = "fiji-paginate-page";
+	var CURRENT_PAGE_CLASSES = "fiji-paginate-current";
 	var GAP_CLASSES = "fiji-paginate-gap";
-	var PREVIOUS_PAGE_CLASSES = "fiji-paginate-previous ui-widget-content ui-state-default";
-	var NEXT_PAGE_CLASSES = "fiji-paginate-next ui-widget-content ui-state-default";
+	var PREVIOUS_PAGE_CLASSES = "fiji-paginate-previous";
+	var NEXT_PAGE_CLASSES = "fiji-paginate-next";
+	var DISABLED_CLASSES = "fiji-paginate-disabled";
+	var HOVER_CLASSES = "fiji-paginate-hover";
 
 	var GAP = "gap";
 	var PREVIOUS_PAGE = "previous_page";
@@ -35,10 +37,10 @@
 			followLink: false,
 			page: function(page) {
 				return true
-				},
+			},
 			href: function(page) {
 				return "javascript:void(0);"
-				}
+			}
 		},
 	
 		_create: function() {
@@ -130,7 +132,7 @@
 					}
 					else {
 						$('<span />').html(options.nextLabel)
-						.addClass(NEXT_PAGE_CLASSES + ' ui-state-disabled')
+						.addClass(NEXT_PAGE_CLASSES + ' ' + DISABLED_CLASSES)
 						.appendTo(self.element);
 					}
 				}
@@ -145,7 +147,7 @@
 					}
 					else {
 						$('<span />').html(options.previousLabel)
-						.addClass(PREVIOUS_PAGE_CLASSES + ' ui-state-disabled')
+						.addClass(PREVIOUS_PAGE_CLASSES + ' ' + DISABLED_CLASSES)
 						.appendTo(self.element);
 					}
 				}
@@ -171,10 +173,10 @@
 
 			self.element.find("a")
 			.bind("mouseenter.paginate", function() {
-				$(this).addClass('ui-state-hover');
+				$(this).addClass(HOVER_CLASSES);
 			})
 			.bind("mouseleave.paginate", function() {
-				$(this).removeClass('ui-state-hover');
+				$(this).removeClass(HOVER_CLASSES);
 			});
 
 			// adapt href of previous page and next page
