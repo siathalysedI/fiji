@@ -12,8 +12,6 @@
  */
 (function($, undefined) {
 	
-var itemClasses = "fiji-ticker-content ui-widget-content ui-helper-reset ui-state-default";
-
 $.widget("fiji.ticker", {
 	options: {
 		active: true,
@@ -35,7 +33,7 @@ $.widget("fiji.ticker", {
 		self.speed = options.mouseOffTimeout;
 		
 		self.element
-			.addClass("fiji-ticker ui-widget ui-corner-all")
+			.addClass("fiji-ticker")
 			.bind("mouseenter.ticker", function() {
 				if (options.disabled) {
 					return;
@@ -57,9 +55,6 @@ $.widget("fiji.ticker", {
 				}
 			});
 
-        self.element.find("ul").addClass("ui-helper-reset");
-			
-		self.element.find("li").addClass(itemClasses);
 		self._addItemBindings(self.element.find("li"));
 
 		var style = self.element.attr("style");
@@ -97,10 +92,7 @@ $.widget("fiji.ticker", {
 		
 		self.element.unbind(".ticker");
 		self.element.find("li").unbind(".ticker");
-		self.element.removeClass("fiji-ticker ui-widget ui-corner-all");
-		self.element.find("li").removeClass(itemClasses + " ui-state-hover ui-state-focus");
-
-        self.element.find("ul").removeClass("ui-helper-reset");
+		self.element.removeClass("fiji-ticker");
 
 		if (self.originalStyle === null) {
 			self.element.removeAttr("style");
@@ -115,31 +107,26 @@ $.widget("fiji.ticker", {
 	_addItemBindings: function(item) {
 		var options = this.options;
 		
-		item
-			.bind("mouseenter.ticker", function() {
-				if (options.disabled) {
-					return;
-				}
-				$(this).addClass("ui-state-hover");
-			})
-			.bind("mouseleave.ticker", function() {
-				if (options.disabled) {
-					return;
-				}
-				$(this).removeClass("ui-state-hover");
-			})
-			.bind("focus.ticker", function() {
-				if (options.disabled) {
-					return;
-				}
-				$(this).addClass("ui-state-focus");
-			})
-			.bind("blur.ticker", function() {
-				if (options.disabled) {
-					return;
-				}
-				$(this).removeClass("ui-state-focus");
-			});
+		item.bind("mouseenter.ticker", function() {
+			if (options.disabled) {
+				return;
+			}
+		})
+		.bind("mouseleave.ticker", function() {
+			if (options.disabled) {
+				return;
+			}
+		})
+		.bind("focus.ticker", function() {
+			if (options.disabled) {
+				return;
+			}
+		})
+		.bind("blur.ticker", function() {
+			if (options.disabled) {
+				return;
+			}
+		});
 	},
 	
 	_scroll: function() {
@@ -148,7 +135,6 @@ $.widget("fiji.ticker", {
 			
 		if (self.options.next !== null && self.readyForNext) {
 			var lastItem = self.element.find("li").last().clone(true);
-			lastItem.removeClass(itemClasses + " ui-state-hover ui-state-focus");
 			self.readyForNext = false;
 			var nextItem = self.options.next(lastItem, function() {
 				self._nextItem.apply(self, arguments);
@@ -172,7 +158,6 @@ $.widget("fiji.ticker", {
 
 			var $nextItem = $(nextItem);
 
-			$nextItem.addClass(itemClasses);
 			self._addItemBindings($nextItem);
 			$nextItem
 				.hide()
