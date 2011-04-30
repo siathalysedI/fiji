@@ -27,6 +27,7 @@
 
 	$.widget("fiji.paginate", {
 		options: {
+			clazz: "pagination",
 			innerWindow: 4,
 			outerWindow: 1,
 			previousLabel: '&#8592; Previous',
@@ -34,6 +35,7 @@
 			separator: ' ',
 			currentPage: null,
 			totalPages: null,
+			willPaginateClasses: true,
 			followLink: false,
 			page: function(page) {
 				return true
@@ -48,6 +50,16 @@
 
 			self.element.addClass(CONTAINER_CLASSES);
 
+			if (self.options.clazz) {
+				self.element.addClass(self.options.clazz);
+			}
+
+			if (self.options.willPaginateClasses) {
+				PREVIOUS_PAGE_CLASSES += " previous_page";
+				NEXT_PAGE_CLASSES += " next_page";
+				DISABLED_CLASSES += " disabled";
+			}
+
 			self._render();
 		},
 	
@@ -59,6 +71,10 @@
 			self.element.empty();
 
 			self.element.removeClass(CONTAINER_CLASSES);
+
+			if (self.options.clazz) {
+				self.element.removeClass(self.options.clazz);
+			}
 
 			return $.Widget.prototype.destroy.call(self);
 		},
