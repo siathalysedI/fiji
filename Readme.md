@@ -2,15 +2,61 @@
 
 ## About
 
-The jQuery Fiji project is a jQuery UI widget library that complements the jQuery UI project with widgets currently not available there.
-This is not an official jQuery UI project, nor are we associated with the jQuery UI team in any way. All widgets were created for our own project needs in mind.
+The jQuery Fiji project is a repository for widgets built upon the jQuery UI widget library. All widgets were created for our own projects needs in mind, but should be universal applicable. The widgets are fully Unit tested (with qUnit) and easily configurable.
+
+Currently jQuery Fiji contains 2 widgets:
+
+* jQuery Fiji Paginate - a pagination widget that works like the will_paginate Rails extension
+* jQuery Fiji Ticker - a Twitter like ticker widget
 
 ## Widgets
+
+### jQuery Fiji Paginate
+
+A pagination widget that behaves like the [will_paginate](https://github.com/mislav/will_paginate/tree/rails3) (Rails 3 branch) extension.
+
+[Paginate Demo](http://medihack.github.com/jquery-fiji/demos/paginate/paginate.html)
+
+Paginate can be used on any empty div:
+
+	<div id="#paginate"></div>
+
+Add a simple pagination with 10 pages where the current page is 3:
+
+	$("#paginate").paginate({
+		totalPages: 10,
+		currentPage: 3
+	});
+
+Several options for configuration:
+
+	$("#paginate").paginate({
+		currentPage: 3, // the current page (required to set by user!)
+		totalPages: 10, // the total page count (required to set by user!)
+		clazz: "pagination", // a class that is automatically added to the widget (default: pagination)
+		innerWindow: 3, // the size of the inner window (default: 4)
+		outerWindow: 2, // the size of the outer window (default: 1)
+		previousLabel: "<-", // the previous label (default: &#8592; Previous)
+		nextLabel: "->", // the next label (default: Next &#8594)
+		willPaginateClasses: false, // add the same classes as will_paginate to the widget (default: true)
+		followLink: false, // follow the href link when a page was clicked (default: false)
+		page: function(page) {
+			// do something when a page was clicked 
+			// the page variable contains the page that was clicked
+			// return true allow the clicked page to become the new current page
+			return true; // <- default
+		},
+		href: function(page) {
+			// allows to set custom hrefs for each page link
+			return "javascript:void(0);" // <- default
+		}
+	})
+
+For more information about those options also see the [will_paginate options](https://github.com/mislav/will_paginate/blob/rails3/lib/will_paginate/view_helpers.rb).
 
 ### jQuery Fiji Ticker
 
 A Twitter (when not logged in on the start page) like Ticker.
-Fully compatible with the jQuery UI Theming framework.
 Well configurable and fully Unit tested.
 
 [Ticker Demo](http://medihack.github.com/jquery-fiji/demos/ticker/ticker.html)
