@@ -3,6 +3,7 @@
  */
 
 var paginate_defaults = {
+	clazz: "pagination",
 	disabled: false,
 	innerWindow: 4,
 	outerWindow: 1,
@@ -11,6 +12,7 @@ var paginate_defaults = {
 	separator: ' ',
 	currentPage: null,
 	totalPages: null,
+	willPaginateClasses: true,
 	followLink: false,
 	page: function(page) {
 		return true

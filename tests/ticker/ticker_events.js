@@ -100,7 +100,7 @@ test("correct order of next called and events", function() {
 		}
 	});
 
-	window.setTimeout(function() { start(); }, 400);
+	window.setTimeout(function() { start(); }, 500);
 });
 
 })(jQuery);
