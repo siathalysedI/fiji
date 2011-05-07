@@ -28,7 +28,7 @@ Add a simple pagination with 10 pages where the current page is 3:
 		currentPage: 3
 	});
 
-Several options for configuration:
+Several configuration options:
 
 	$("#paginate").paginate({
 		currentPage: 3, // the current page (required to set by user!)
@@ -113,6 +113,51 @@ start // start the ticker again<br>
 To call those methods (the common jQuery UI way):
 
     $("#ticker").ticker("stop");
+
+### JQuery Fiji Overlay
+
+A modal overlay that prevents any user interactions on the below layers.
+In contrast to the many other available overlay solutions it does not
+make many presumptions about how you would use it. The creation of the
+overlay is even separated from the creation of a dialog on top of it.
+Another strength is its retention of the natural tab order.
+
+[Overlay Demo](http://medihack.github.com/jquery-fiji/demos/overlay/overlay.html)
+
+To create a window overlay:
+
+	$(window).overlay();
+
+and to remove it again:
+
+	$(window).overlay("destroy");
+
+To add a container (on an existing overlay):
+
+	$(window).overlay("openContainer", "Hello World!");
+
+and to close it again (overlay stays open):
+
+	$(window).overlay("closeContainer");
+
+A window overlay (`$(window).overlay()`) is automatically position
+fixed, while a document overlay (`$(document).overlay()`) is position absolute.
+
+There are several configuration options (with below defaults):
+
+	$(window).overlay({
+		overlayClass: "fiji-overlay", // the class of the overlay
+		containerClass: "fiji-overlay-container", // the class of an added container
+		backgroundColor: "#000000", // the background color of the overlay
+		opacity: 0.5, // the opacity of the overlay
+		zIndex: 1000, // the zIndex of the overlay
+		escClose: false, // close the overlay on pressing escape key
+		position: null // the position of the container as array of top and left (e.g. [100, 300])
+					   // will be centered if null
+	});
+
+Options can also be set by using `$(window).overlay("option",
+"position", [500, 500])` and are mostly updated live.
 
 ## License
 
