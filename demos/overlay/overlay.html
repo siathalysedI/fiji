@@ -22,8 +22,11 @@
 		<script type="text/javascript" src="../../src/jquery.fiji.overlay.js"></script>
 		<script type="text/javascript">
 			$(function() {
-					var messageBox = '<div class="message-box"><a href="http://www.jquery.com">jQuery</a> is a fast and concise JavaScript Library that simplifies HTML document traversing, event handling, animating, and Ajax interactions for rapid web development. <a href="http://www.jquery.com">jQuery</a> is designed to change the way that you write JavaScript.</div>';
-					$(window).overlay({}).overlay("openContainer", messageBox);
+          var messageBox = '<div class="message-box"><p>This is a <a href="https://github.com/medihack/fiji">Fiji</a> Overlay Container.</p><p>Please <a href="http://www.cs.tut.fi/~jkorpela/forms/tabbing.html">tab</a> around and compare with other overlays!</p><p>Click the container to close the overlay or press escape (it is fully up to you how you implement this for your dialog).</p></div>';
+					$(window).overlay({escClose: true}).overlay("openContainer", messageBox);
+					$(".message-box").click(function() {
+						$(window).overlay("destroy");
+					});
 			})
 		</script>
 	</head>
